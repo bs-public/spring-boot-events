@@ -9,15 +9,14 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/notify")
 public class NotificationController {
-  private final ApplicationEventPublisher publisher;
+  private final NotificationService notificationService;
 
-  public NotificationController(ApplicationEventPublisher publisher) {
-    this.publisher = publisher;
+  public NotificationController(NotificationService notificationService) {
+    this.notificationService = notificationService;
   }
 
   @GetMapping
   public String sendNotification(@RequestParam("message") String message) {
-    publisher.publishEvent(new NotificationEvent(message));
-    return "Notification sent: " + message;
+    return notificationService.sendNotification(message);
   }
 }
