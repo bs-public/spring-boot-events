@@ -15,7 +15,7 @@ public class NotificationController {
   }
 
   @GetMapping
-  public String send(@RequestParam String message, @RequestParam String type) {
+  public String send(@RequestParam("message") String message, @RequestParam("type") String type) {
     service.sendNotification(message, type);
     return "Notification event published for type: " + type;
   }
