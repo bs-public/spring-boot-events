@@ -15,6 +15,7 @@
         <module>event-async</module>
         <module>event-transactional</module>
         <module>event-conditional</module>
+        <module>event-ordering</module>
     </modules>
 
     <properties>
