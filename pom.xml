@@ -13,6 +13,7 @@
     <modules>
         <module>event-basic-sync</module>
         <module>event-async</module>
+        <module>event-transactional</module>
     </modules>
 
     <properties>
