@@ -10,7 +10,8 @@ import org.springframework.stereotype.Component;
 public class AdminNotificationListener {
   private static final Logger log = LoggerFactory.getLogger(AdminNotificationListener.class);
 
-  @EventListener(condition = "#event.type == 'admin'")
+  // @EventListener(condition = "#event.type == 'admin'")
+  @EventListener(condition = "#root.args[0].type == 'admin'")
   public void handleAdmin(NotificationEvent event) {
     log.info("[ADMIN] Received admin notification: {}", event.message());
   }
