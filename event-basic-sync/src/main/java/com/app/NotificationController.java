@@ -16,7 +16,7 @@ public class NotificationController {
   }
 
   @GetMapping
-  public String sendNotification(@RequestParam String message) {
+  public String sendNotification(@RequestParam("message") String message) {
     publisher.publishEvent(new NotificationEvent(message));
     return "Notification sent: " + message;
   }
