@@ -18,6 +18,7 @@ public class NotificationService {
   public String sendNotification(String message) {
     log.info("Publishing notification: {}", message);
     publisher.publishEvent(new NotificationEvent(message));
+    log.info("Notification event published successfully for message: {}", message);
     return "Notification event published";
   }
 }
