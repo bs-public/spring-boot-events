@@ -1,5 +1,7 @@
-package com.app;
+package com.app.listener;
 
+import com.app.AsyncExecutors;
+import com.app.NotificationEvent;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.event.EventListener;
@@ -15,12 +17,12 @@ public class AsyncNotificationListener {
   @EventListener
   public void handleAsync(NotificationEvent event) {
     log.info(
-        "[ASYNC] Received: {} on thread: {}", event.getMessage(), Thread.currentThread().getName());
+        "[ASYNC] Received: {} on thread: {}", event.message(), Thread.currentThread().getName());
     try {
       Thread.sleep(1000); // Simulate long-running task
     } catch (InterruptedException e) {
       Thread.currentThread().interrupt();
-      log.warn("Thread interrupted while handling async event for message: {}", event.getMessage());
+      log.warn("Thread interrupted while handling async event for message: {}", event.message());
     }
   }
 }

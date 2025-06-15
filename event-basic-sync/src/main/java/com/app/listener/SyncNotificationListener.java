@@ -1,5 +1,6 @@
-package com.app;
+package com.app.listener;
 
+import com.app.NotificationEvent;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.context.event.EventListener;
@@ -13,6 +14,6 @@ public class SyncNotificationListener {
   @EventListener
   public void handleSync(NotificationEvent event) {
     log.info(
-        "[SYNC] Received: {} on thread: {}", event.getMessage(), Thread.currentThread().getName());
+        "[SYNC] Received: {} on thread: {}", event.message(), Thread.currentThread().getName());
   }
 }

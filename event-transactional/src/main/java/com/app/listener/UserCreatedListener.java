@@ -1,5 +1,6 @@
-package com.app;
+package com.app.listener;
 
+import com.app.UserCreatedEvent;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
@@ -12,6 +13,6 @@ public class UserCreatedListener {
 
   @TransactionalEventListener(phase = TransactionPhase.AFTER_COMMIT)
   public void handleUserCreated(UserCreatedEvent event) {
-    log.info("[TX-EVENT] User created event handled for: {}", event.getUserName());
+    log.info("[TX-EVENT] User created event handled for: {}", event.userName());
   }
 }
