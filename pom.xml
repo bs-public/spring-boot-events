@@ -17,6 +17,7 @@
         <module>event-conditional</module>
         <module>event-ordering</module>
         <module>event-chained</module>
+        <module>event-lifecycle</module>
     </modules>
 
     <properties>
